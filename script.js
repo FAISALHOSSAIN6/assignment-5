@@ -2,7 +2,9 @@ let elements =  document.getElementsByClassName('complete-btn');
 
 for(let element of elements){
    element.addEventListener('click', function(event){
-    alert('Board Update Successfully')
+      
+      alert('Board Update Successfully')
+    
       
     element.disabled = true;
    //  -------
@@ -12,6 +14,7 @@ for(let element of elements){
    const commentContainer = document.getElementById('comment-box');
    // document.getElementById('comment-box').style= 8  ;
    let commentDiv = document.createElement('div');
+   // document.createElement('div').style.margin = '8';
    commentDiv.innerText = 'You have completed the task ' + cardTitle + ' 1:32:34 AM';
       
    commentContainer.appendChild(commentDiv);
@@ -24,9 +27,10 @@ for(let element of elements){
    
    document.getElementById('num').innerText = convertedNumber;
 
-   if(parseInt(convertedNumber) < 1){
-      alert("Congratulation")
-   }
+// -------------------------------
+if(parseInt(convertedNumber) < 1){
+   alert(" Congratulation, You have completed the task successfully ")
+}
 
 // ------
 
@@ -45,3 +49,29 @@ for(let element of elements){
 document.getElementById('new-today').addEventListener('click',function(){
    window.location.href = "question.html"
 })
+
+
+// ------------------
+document.getElementById('clear-btn').addEventListener('click', function(){
+   document.getElementById('comment-box').innerText = "" ;
+})
+
+
+let newDate = new Date();
+
+let currentYear = newDate.getFullYear();
+
+
+let currentMonth = newDate.getMonth() + 1 ;
+
+let currentDate = newDate.getDate();
+
+
+
+
+
+const date =document.getElementById('date') ;
+
+date.innerText = currentDate + '/' + currentMonth + '/' + currentYear
+
+
